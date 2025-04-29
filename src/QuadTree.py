@@ -55,6 +55,7 @@ class QuadTree(QuadTreeADT):
         def search(current: Node, point: POINT) -> object:
             if current is None:
                 return None
+            
             if current.x == point.x and current.y == point.y:
                 return current.value
             elif point.x < current.x and point.y >= current.y:
@@ -65,6 +66,8 @@ class QuadTree(QuadTreeADT):
                 return search(current.NE, point)
             elif point.x >= current.x and point.y < current.y:
                 return search(current.SE, point)
+
+            return None
 
         return search(self._root, point)
     
