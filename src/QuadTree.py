@@ -78,23 +78,4 @@ class QuadTree(QuadTreeADT):
             return all_points(current.NW) + all_points(current.NE) + all_points(current.SW) + all_points(current.SE) + [(current.x, current.y)]
 
         return all_points(self._root)
-    
-
-# testes da classe QuadTree
-if __name__ == '__main__':
-    quad_tree: QuadTreeADT = QuadTree()
-    m = [[7, 6, 76],
-        [5, 6, 56],
-        [1, 1, 11],
-        [5, 5, 55],
-        [2, 7, 27],
-        [3, 3, 33]]
-    for a in m:
-        quad_tree.insert(a[0], a[1], a[2])
-    
-    rect: Interval2D = Interval2D(Interval(1, 8), Interval(4, 8))
-    quad_tree.query_2D(rect)
-
-    print(quad_tree.search(POINT(5, 5)))
-    print(quad_tree.all_points())
 
