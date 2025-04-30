@@ -1,6 +1,6 @@
 from ctypes.wintypes import POINT
 from QuadTreeADT import QuadTreeADT
-from Interval import Interval, Interval2D
+from Interval import Interval2D
 from Node import Node
 
 class QuadTree(QuadTreeADT):
